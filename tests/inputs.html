@@ -12,7 +12,8 @@
 		<script type="text/javascript">
           		$(document).ready(function () {
 
-              			$('.testselect1').SumoSelect({ placeholder: 'Technology', selectAll: true, search: true });
+              			$('.select1').SumoSelect({ placeholder: 'Technology', selectAll: true, search: true });
+				$('.select2').SumoSelect({ placeholder: 'Technology subtype', selectAll: true, search: true });
               			/* $('.testselect2').SumoSelect();
               			$('.optgroup_test').SumoSelect();
               			$('.search_test').SumoSelect({search: true, searchText:'Enter here.'});
@@ -29,15 +30,21 @@
   </head>
   <body>
     <form>
-      <select multiple="multiple" class="testselect1">
+      <select multiple="multiple" class="select1">
+        <option value="Pumped Hydro">Pumped Hydro</option>
+        <option value="CAES-D">Diabatic CAES</option>
+	<option value="CAES-A">Adiabatic CAES</option>
+      </select>
+      <br>
+      <select multiple="multiple" class="select2">
         <option value="Pumped Hydro">Pumped Hydro</option>
         <option value="CAES-D">Diabatic CAES</option>
 	<option value="CAES-A">Adiabatic CAES</option>
       </select>
       <br><br>
       Checkboxes:<br>
-      <input type="checkbox" name="vehicle1" value="summary"> Summary data only<br>
-      <input type="checkbox" name="vehicle2" value="csv"> Download CSV
+      <input type="checkbox" name="summaryChk" value="summary"> Summary data only<br>
+      <input type="checkbox" name="csvChk" value="csv"> Download CSV
       <br><br>
       <input type="submit" value="Submit">
     </form>

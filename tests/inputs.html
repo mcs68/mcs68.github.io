@@ -1,0 +1,46 @@
+<html>
+  <head>
+		<!-- jQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.0.2/sumoselect.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.0.2/jquery.sumoselect.min.js"></script>
+		
+		<script type="text/javascript">
+          		$(document).ready(function () {
+
+              			$('.testselect1').SumoSelect();
+              			/* $('.testselect2').SumoSelect();
+              			$('.optgroup_test').SumoSelect();
+              			$('.search_test').SumoSelect({search: true, searchText:'Enter here.'});
+              			$('.testselect3').SumoSelect({ placeholder: 'This is a placeholder' });
+              			$('.testselect5').SumoSelect();
+              			$('.testselect6').SumoSelect();
+              			$('.testselect7').SumoSelect({ okCancelInMulti: true });
+              			$('.select1').SumoSelect({ okCancelInMulti: true, selectAll: true});
+              			$('.select2').SumoSelect({selectAll: true});
+              			$('.testselect8').SumoSelect({ okCancelInMulti: true, triggerChangeCombined: false });
+              			$('.testselect9').SumoSelect({ okCancelInMulti: true, triggerChangeCombined: true, forceCustomRendering: true }); */
+          		});
+    </script>
+  </head>
+  <body>
+    <form>
+      <select class="testselect1" multiple>
+        <option value=""></option>
+        <option value="Pumped Hydro">Pumped Hydro</option>
+        <option value="CAES-D">Diabatic CAES</option>
+      </select>
+      <br><br>
+      Checkboxes:<br>
+      <input type="checkbox" name="vehicle1" value="summary"> Summary data only<br>
+      <input type="checkbox" name="vehicle2" value="csv"> Download CSV
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+
+      

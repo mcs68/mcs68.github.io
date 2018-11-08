@@ -12,10 +12,14 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.0.2/jquery.sumoselect.min.js"></script>
 		
+		<!-- Google charts -->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		
 		<script type="text/javascript">
 			
 			var technology = "", subtype = "", summaryBool = 0, csvBool = 0;
 			var i = 0;
+			var qStr = "", param = "", entries = {length:0};
 			$(document).ready(function () {
 
             	$('.select1').SumoSelect({ placeholder: 'Technology', searchText: 'Search technologies', selectAll: true, search: true });
@@ -43,17 +47,41 @@
 					csvBool     = $("#csvChk").prop('checked');
 					
 					// handle selections
-					techLen = tech.length;
-					if (techLen > 0){
-						for (i = 0;i < techLen){
-							alert("Option chosen: " + tech[i].value);
-						}
-					} else {
-						alert("No technology chosen - will include all.")
-					}
-				});
+				
 					
-          	});
+					function makeQueryString(param, entries){
+						var queryStr = "";
+						var nEntries = entries.length;
+						if (nEntries > 0){
+							for (i = 0;i < nEntries-1;i++){
+								queryStr = queryStr + param + '=' + '\'' + entries[i].value + '\' OR ';
+							}
+							queryStr = queryStr + param + '=' + '\'' + entries[i].value + '\''
+							//alert(queryStr)
+						} else {
+							alert("No technology chosen - should set to include all.")
+						}
+						return queryStr
+					}
+					alert(makeQueryString('A',tech));
+					qStr = makeQueryString('A',tech);
+					
+					google.charts.load('current');
+					google.charts.setOnLoadCallback(drawVisualization(qStr));
+
+					function drawVisualization(qString) {
+						alert('SELECT A,B WHERE ' + qString)
+						var wrapper = new google.visualization.ChartWrapper({
+							chartType: 'Table',
+							dataSourceUrl: 'http://spreadsheets.google.com/tq?key=1mvkjBacqXcMJUJ6ZAOKRAKp1ui3d7KDiiplFhJDbgYY&sheet=Tabletest',
+							query: 'SELECT A,B WHERE ' + qString,
+							//query: 'SELECT A,B', // WHERE ' + makeQueryString('A',tech) ,
+							containerId: 'vis_div'
+						});
+						wrapper.draw()
+					}
+				})
+			});
 		</script>
 		
   </head>

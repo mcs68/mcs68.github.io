@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
 	  	<title>Inputs testing</title>
@@ -15,7 +14,7 @@
 		<script type="text/javascript">
 			
 			var technology = "", subtype = "", summaryBool = 0, csvBool = 0;
-			var i = 0;
+			
 			$(document).ready(function () {
 
             	$('.select1').SumoSelect({ placeholder: 'Technology', searchText: 'Search technologies', selectAll: true, search: true });
@@ -32,25 +31,10 @@
               	$('.testselect8').SumoSelect({ okCancelInMulti: true, triggerChangeCombined: false });
               	$('.testselect9').SumoSelect({ okCancelInMulti: true, triggerChangeCombined: true, forceCustomRendering: true }); */
 				$("button").click(function(){
-					//alert("Value: " + $("#summaryChk").prop('checked'));
-					//var skillsSelect = document.getElementById("tech");
-					//var selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
-					//technology  = $("#tech").children("option").filter(":selected").text();
-					//alert("Value: " + technology);
-					tech = $("#tech").children("option").filter(":selected");
-					subtype     = $("#subtype").children("option").filter(":selected");
+					technology  = $("#tech").children("option").filter(":selected").text();
+					subtype     = $("#subtype").children("option").filter(":selected").text();
 					summaryBool = $("#summaryChk").prop('checked');
 					csvBool     = $("#csvChk").prop('checked');
-					
-					// handle selections
-					techLen = tech.length;
-					if (techLen > 0){
-						for (i = 0;i < techLen){
-							alert("Option chosen: " + tech[i].value);
-						}
-					} else {
-						alert("No technology chosen - will include all.")
-					}
 				});
 					
           	});

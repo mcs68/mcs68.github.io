@@ -1,0 +1,88 @@
+/* Variable imports
+-------------------------------------------------------------- */
+/* Breakpoints
+-------------------------------------------------------------- */
+/* Indigo colour palette
+-------------------------------------------------------------- */
+/* Generic grayscale
+-------------------------------------------------------------- */
+/* Tints
+-----------------------------------------------------------------*/
+/* Form colours
+--------------------------------------------------------------*/
+/* element specific
+-------------------------------------------------------------- */
+/* Project specific
+-------------------------------------------------------------- */
+/* image classes
+--------------------------------------------------------------------*/
+/* blurb caption overlay
+--------------------------------------------------------------------*/
+/*images
+----------------------------------------*/
+/*layout
+----------------------------------------*/
+/*video
+----------------------------------------*/
+/*search
+------------------------------------------------*/
+/*media
+------------------------------------------------*/
+/* Z-index
+------------------------------------------------*/
+/* Gridset Gutter values
+    - there is no method to get these values 
+      directly from Gridset
+------------------------------------------------*/
+/* Font stacks
+-------------------------------------------------------------- */
+body {
+  background: white; }
+
+.site-content__body {
+  margin-left: 0; }
+
+.header {
+  display: none !important; }
+
+nav {
+  display: none; }
+
+h1 {
+  color: black; }
+
+/* .photograph--show{
+	background-image: none!important;
+} */
+.footer__links {
+  display: none; }
+
+.no-print {
+  display: none !important; }
+
+#searchSiteform input {
+  display: none !important; }
+
+/*code sources
+-----------------------------------------------------*/
+/*announcements
+---------------------------------------*/
+.announcement--info, .announcement--fix, .announcement--alert {
+  display: none; }
+
+/*accordion
+---------------------------------------*/
+.accordion__description {
+  display: block !important; }
+
+.tag {
+  display: none; }
+
+.footer__inner {
+  color: black;
+  background-color: white;
+  padding: 0px 35px; }
+  .footer__inner .block {
+    display: none; }
+  .footer__inner #social {
+    display: none; }
